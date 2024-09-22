@@ -1,25 +1,32 @@
 import 'package:flutter/material.dart';
-
+import 'package:market_place_flutter_e/pages/product_detail.dart';
+import '../models/product_model.dart';
 import '../components/item.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
-    final List<String> entries = <String>['A', 'B', 'E'];
-    final List<int> colorCodes = <int>[600, 500, 100];
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Заголовок"),
+        title: const Center(
+            child: Text('Market Place', style: TextStyle(color: Colors.black))),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListView.builder(
-            itemCount: 33,
-            itemBuilder: (BuildContext context, int index) {
-              return const Item();
-            }),
+      body: ListView.builder(
+        itemCount: products.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      ProductDetailPage(product: products[index]),
+                ),
+              );
+            },
+            child: Item(product: products[index]),
+          );
+        },
       ),
     );
   }
