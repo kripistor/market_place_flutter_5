@@ -75,6 +75,13 @@ class ProductDetailPage extends StatelessWidget {
                 style: textFont,
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Артикул: ${product.article}',
+                style: textFont,
+              ),
+            ),
           ],
         ),
       ),
