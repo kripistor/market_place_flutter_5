@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
               product: products[index],
               onDelete: () {
                 setState(() {
-                  products.removeAt(index); // Удаление товара из списка
+                  products.removeAt(index);
                 });
               },
             ),
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
           ).then((newProduct) {
             if (newProduct != null) {
               setState(() {
-                products.add(newProduct); // Обновляем список продуктов
+                products.add(newProduct);
               });
             }
           });
