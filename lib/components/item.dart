@@ -3,8 +3,10 @@ import '../models/product_model.dart';
 
 class Item extends StatelessWidget {
   final Product product;
+  final Function onDelete; // Добавим функцию обратного вызова для удаления
 
-  const Item({Key? key, required this.product}) : super(key: key);
+  const Item({Key? key, required this.product, required this.onDelete})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +29,19 @@ class Item extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 10, bottom: 20),
               child: Center(
-                child: Image.asset(
-                  product.image,
-                  fit: BoxFit.contain,
-                  width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.25,
-                ),
+                child: product.image.startsWith('http')
+                    ? Image.network(
+                        product.image,
+                        fit: BoxFit.contain,
+                        width: double.infinity,
+                        height: MediaQuery.of(context).size.height * 0.25,
+                      )
+                    : Image.asset(
+                        product.image,
+                        fit: BoxFit.contain,
+                        width: double.infinity,
+                        height: MediaQuery.of(context).size.height * 0.25,
+                      ),
               ),
             ),
             Column(
@@ -54,6 +63,13 @@ class Item extends StatelessWidget {
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                ),
+                // Кнопка удаления
+                Center(
+                  child: IconButton(
+                    icon: Icon(Icons.delete, color: Colors.red),
+                    onPressed: () => onDelete(),
                   ),
                 ),
               ],

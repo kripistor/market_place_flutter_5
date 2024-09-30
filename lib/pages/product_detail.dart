@@ -19,11 +19,18 @@ class ProductDetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(
+            product.image.startsWith('http')
+                ?Image.network(
               product.image,
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
               width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.4,
+              height: MediaQuery.of(context).size.height * 0.25,
+            )
+                : Image.asset(
+              product.image,
+              fit: BoxFit.contain,
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * 0.25,
             ),
             const SizedBox(height: 20),
             Padding(
