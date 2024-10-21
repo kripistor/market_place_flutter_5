@@ -1,11 +1,10 @@
-#  Практическая работа №4
+#  Практическая работа №5
 ##  Лисичкин Виктор Евгеньевич ЭФБО-05-22
-Добавление товара
-![image](https://github.com/user-attachments/assets/8e9b46b4-affe-49dc-a185-cdd25806fa5d)
-![image](https://github.com/user-attachments/assets/0fdc3960-6c11-4ec6-bc0b-06f342bbade6)
-Удаление товара
-до: ![image](https://github.com/user-attachments/assets/94e70f96-5f15-4dc4-b344-b3bde8a1d9f6)
-после ![image](https://github.com/user-attachments/assets/24cf0ec9-9241-4074-b444-5d9a3af8fc0b)
+![изображение](https://github.com/user-attachments/assets/f88cf37a-d8fe-438a-847f-625697b6c18f)
+![изображение](https://github.com/user-attachments/assets/91445475-0f12-46de-bc29-8f39b27598a2)
+![изображение](https://github.com/user-attachments/assets/bf1bfff5-bcbe-4107-80f8-f99627423e49)
+
+
 
 
 
