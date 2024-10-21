@@ -18,7 +18,11 @@ class _HomePageState extends State<HomePage> {
           child: Text('Market Place', style: TextStyle(color: Colors.black)),
         ),
       ),
-      body: ListView.builder(
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 3 / 4,
+        ),
         itemCount: products.length,
         itemBuilder: (context, index) {
           return GestureDetector(
@@ -37,6 +41,7 @@ class _HomePageState extends State<HomePage> {
                   products.removeAt(index);
                 });
               },
+              isLeftColumn: index % 2 == 0,
             ),
           );
         },
