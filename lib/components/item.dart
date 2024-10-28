@@ -17,7 +17,7 @@ class Item extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dismissible(
-      key: Key(product.id.toString()), // Убедитесь, что у продукта есть уникальный идентификатор
+      key: Key(product.id.toString()),
       direction: isLeftColumn ? DismissDirection.endToStart : DismissDirection.startToEnd,
       onDismissed: (direction) {
         onDelete();
